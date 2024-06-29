@@ -1,0 +1,16 @@
+from PIL import Image
+import matplotlib.pyplot as plt
+from pytesseract import pytesseract
+
+img = Image.open("image.webp", "r")
+plt.imshow(img)
+img.show()
+
+print("This is the image the computer will read!")
+print("\nThe text that is in the image: ")
+
+pytesseract.run_tesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR'
+
+text = pytesseract.image_to_string(img)
+
+print("\n", str(text))
